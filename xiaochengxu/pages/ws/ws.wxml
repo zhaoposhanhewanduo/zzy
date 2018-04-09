@@ -1,1 +1,4 @@
-<view bindtap = 'changeclimate'>{{name}}</view>
+<view class = 'ws-list'>
+  <view bindtap = 'changeclimate' class = 'detail' wx:for = "{{aadata}}">{{item.name}}
+  </view>
+</view>
