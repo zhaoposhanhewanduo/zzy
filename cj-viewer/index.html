@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/viewer.css" />
+		<link rel="stylesheet" href="css/swiper-4.2.0.min.css" />
+		<link rel="stylesheet" href="css/main.css" />
+	</head>
+	<body>
+		<!--<div>
+		  <img id="image" src="img/1.jpg" alt="Picture">
+		</div>
+		
+		<div>
+		  <ul id="images">
+		    <li><img src="img/1.jpg" alt="Picture 1"></li>
+		    <li><img src="img/2.jpg" alt="Picture 2"></li>
+		    <li><img src="img/3.jpg" alt="Picture 3"></li>
+		  </ul>
+		</div>-->
+		<!--<ul id="image"> 
+		    <li><img data-original="img/1.jpg" src="img/1.jpg" alt="图片1"></li> 
+		    <li><img data-original="img/2.jpg" src="img/2.jpg" alt="图片2"></li> 
+		    <li><img data-original="img/3.jpg" src="img/3.jpg" alt="图片3"></li> 
+		    <li><img data-original="img/4.jpg" src="img/4.jpg" alt="图片4"></li> 
+		    <li><img data-original="img/5.jpg" src="img/5.jpg" alt="图片5"></li> 
+		    <li><img data-original="img/6.jpg" src="img/6.jpg" alt="图片6"></li> 
+		</ul>-->
+		<div class="swiper-container">
+		  <div class="swiper-wrapper" id="image">
+		    <div class="swiper-slide"><img data-original="img/1.jpg" src="img/1.jpg" alt="图片1"></div>
+		    <div class="swiper-slide"><img data-original="img/2.jpg" src="img/2.jpg" alt="图片2"></div>
+		    <div class="swiper-slide"><img data-original="img/3.jpg" src="img/3.jpg" alt="图片3"></div>
+		  </div>
+		</div>
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
+		<script type="text/javascript" src="js/viewer.js" ></script>
+		<script type="text/javascript" src="js/swiper-4.2.0.min.js" ></script>
+		<script>
+		   var mySwiper = new Swiper('.swiper-container', {
+			autoplay: true,//可选选项，自动滑动
+		   })
+		   $('#image').viewer({
+		   	url: 'data-original', 
+		   	zoomTo: 1,
+		    navbar:false,
+			toolbar:false,
+		   })
+		</script>
+	</body>
+</html>
