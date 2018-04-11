@@ -153,14 +153,20 @@
 
 .viewer-canvas > img {
   height: auto;
+  min-height:500px !important;
   margin: 15px auto;
   max-width: 90% !important;
   width: auto;
-  /*width: 100% !important;*/
-  /*min-width: 100% !important;*/
-  /*margin-left: 0 !important;*/
-}
+  
+  max-width: 100% !important;
+  margin-left: 0;
+  
+  
 
+  /*min-width: 100% !important;
+  min-height:500px !important;
+   width: auto;*/
+}
 .viewer-footer {
   bottom: 0;
   left: 0;
@@ -168,6 +174,7 @@
   position: absolute;
   right: 0;
   text-align: center;
+  display: none;
 }
 
 .viewer-navbar {
