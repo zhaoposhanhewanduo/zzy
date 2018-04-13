@@ -1005,8 +1005,8 @@
           ratio: width / naturalWidth,
           width: width,
           height: height,
-          left: (viewerWidth - width) / 2,
-          top: (viewerHeight - height) / 2
+//        left: (viewerWidth - width) / 2,
+          top: (viewerHeight - height) / 2,
         };
         var initialImageData = assign({}, imageData);
 
@@ -1041,7 +1041,9 @@
         width: imageData.width,
         height: imageData.height,
         marginLeft: imageData.left,
+//      marginLeft:0,
         marginTop: imageData.top
+        
       }, getTransforms(imageData)));
 
       if (done) {
@@ -1214,8 +1216,8 @@
       if (options.loading) {
         removeClass(this.canvas, CLASS_LOADING);
       }
-
-      image.style.cssText = 'height:0;' + ('margin-left:' + viewerData.width / 2 + 'px;') + ('margin-top:' + viewerData.height / 2 + 'px;') + 'max-width:none!important;' + 'position:absolute;' + 'width:0;';
+// + ('margin-left:' + viewerData.width / 2 + 'px;') 
+      image.style.cssText = 'height:0;'+ ('margin-top:' + viewerData.height / 2 + 'px;') + 'max-width:none!important;' + 'position:absolute;' + 'width:0;';
 
       this.initImage(function () {
         toggleClass(image, CLASS_MOVE, options.movable);

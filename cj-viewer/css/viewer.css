@@ -163,9 +163,9 @@
   
   
 
-  /*min-width: 100% !important;
+  min-width: 100% !important;
   min-height:500px !important;
-   width: auto;*/
+   /*width: auto;*/
 }
 .viewer-footer {
   bottom: 0;
