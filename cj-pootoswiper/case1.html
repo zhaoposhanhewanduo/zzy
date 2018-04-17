@@ -1,0 +1,102 @@
+define(function(require, exports, module) {
+    var play = 3000;
+    var loop = true;
+    var length = $('.img_box .swiper-wrapper').find('.swiper-slide').length;
+    if (length <= 1){
+        play = null;
+        loop = false;
+    }
+    var swiper = new Swiper('.img_box', {
+        pagination : '.swiper-pagination',
+        paginationType : 'fraction',
+         loop : loop,
+        autoplay: play,
+    });
+
+    $('.look-img').on('click',function(){
+        swiper.stopAutoplay();
+        $('.look-mask').css('display','block')
+        $('.img_box').addClass('img_box1')
+        $('body').css({"height":"100%","overflow":'hidden'})
+        $('.rw_case_details').css({
+            'height':'100%',
+            "overflow":'hidden',
+        })
+        // $('.img_box1').css("overflow",'hidden')
+        $('.img_box1').css({
+            'width':'100%',
+            'height':'4.5rem',
+            'top':'50%',
+            'margin-top':'-2.25rem',
+        })
+        $('.swiper-pagination').hide();
+        $('.footer-bar').css('display','none')
+        $('.copyright').css('display','none')
+
+        console.log(swiper)
+    })
+    $('.look-mask').on('click',function(){
+        swiper.startAutoplay();
+        $('.look-mask').css('display','none')
+        $('.img_box').removeClass('img_box1')
+        $('body').css({"overflow":'visible',"height":"auto"})
+        $('.rw_case_details').css({
+            'height':'auto',
+            "overflow":'auto',
+            "position":"relative"
+        })
+        $('.img_box').css({
+            'width':'100%',
+            'height':'4.5rem',
+            'top':'0',
+            'margin-top':'0',
+        })
+        $('.footer-bar').css('display','block')
+        $('.copyright').css('display','block')
+        $('.swiper-pagination').show();
+    })
+    var filter = require("utils/filter");
+    var tagIds = filter.getQueryString("labelid")
+    var url = window.location.href;
+    // getCaption(url)
+    // function getCaption(Url){
+    //     var index=Url.lastIndexOf("\&labelid");
+    //     Url=Url.substring(index+8,Url.length);
+    //     console.log(Url);
+    //     // return obj;
+    //     tagIds = Url;
+    // }
+
+
+        if($(window).width()>550){
+            // $('.img_box1').css({
+            //     'width':'100%',
+            //     'height':'100%',
+            //     'margin-top':'0',
+            //     'top':'0'
+            // })
+            $('.rw_case_details').css({
+                'min-height':'100%',
+            })
+        }
+        // else{
+        //     $('.img_box1').css({
+        //         'width':'100%',
+        //         'height':'4.5rem',
+        //         'top':'50%',
+        //         'margin-top':'-2.25rem',
+        //     })
+        // }
+    var clientService = require("wapsite/service/client");
+    if(hasTag && staffname){
+        var pdata = {
+            "tagIds":tagIds,
+            "userName":staffname,
+            "userMemberId":member.id
+        };
+        if(tagIds!=''){
+            clientService.add(pdata).ready(function(data){
+            })
+        }
+    }
+});

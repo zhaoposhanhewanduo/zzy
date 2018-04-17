@@ -1,0 +1,268 @@
+ <#-- 案例详情页 -->
+ <!doctype html class="bgW case">
+ <#assign f = "case" >
+ <html lang="en">
+ <head>
+     <@caseBeanTag caseId = RequestParameters["caseId"];cmsCase>
+        <#assign cmsCase = cmsCase>
+     </@caseBeanTag>
+     <meta charset="UTF-8">
+     <title>${cmsCase.name}</title>
+     <link rel="stylesheet" type="text/css" href="${domainUrl!}/static/wapsite/css/swiper.min.css">
+     <#include "mcommon.ftl" />
+ </head>
+ <body class="bgW case">
+ <div class="rw_case_details">
+     <!-- 案例详情轮播 -->
+     <div class="img_box swiper-container demo-test-gallery">
+         <div class="swiper-wrapper">
+         	 <#if cmsCase.images?? && cmsCase.images!="">
+	            <#assign images="${cmsCase.images}"?eval/>
+	            <#list images as image>
+	            	<div class="swiper-slide"><img src="${image.image}?x-oss-process=image/resize,m_fixed,h_452,w_750,limit_0/quality,q_100" class = 'look-img'></div>
+        		</#list>
+        	 </#if>
+         </div>
+         <div class="swiper-pagination"></div>
+     </div>
+     <!-- 内容 -->
+     <div class="case_content">
+         <p class="case_title">${cmsCase.name}</p>
+         <div class="case_flex">
+             <div class="flex_item">
+                 <p>风格</p>
+                 <p class="item_style">${cmsCase.styleName!"-"}</p>
+             </div>
+             <div class="flex_item border">
+                 <span class="line left"></span>
+                 <p>户型</p>
+                 <p class="item_style">${cmsCase.houseTypeName!"-"}</p>
+                 <span class="line right"></span>
+             </div>
+             <div class="flex_item">
+                 <p>面积</p>
+                 <p class="item_style">
+                     <span>${cmsCase.area!"-"}</span><#if cmsCase.area??><span>m&sup2;</span></#if>
+                 </p>
+             </div>
+         </div>
+     </div>
+     <!-- 设计师介绍 -->
+    <#if cmsCase.stylistId??>
+     <#assign stylistId = cmsCase.stylistId!>
+         <@designerBeanTag stylistId = stylistId;designer>
+             <#assign stylist = designer>
+         </@designerBeanTag>
+    </#if>
+     <#if stylist??>
+	     <div class="bgCCC"></div>
+	     <a href="${domainUrl}/wapsite/stylist?shopid=${wapsite_shop_id?c}&stylistId=${stylist.id}" class="case_designer">
+	         <div class="case_head">
+	             <img src="<#if stylist.images?? && stylist.images != "">${stylist.images}<#else>${domainUrl}/static/wapsite/images/rw_head_info.png</#if>" alt="">
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  <#-- 案例详情页 -->
+ <!doctype html class="bgW case">
+ <#assign f = "case" >
+ <html lang="en">
+ <head>
+     <@caseBeanTag caseId = RequestParameters["caseId"];cmsCase>
+        <#assign cmsCase = cmsCase>
+     </@caseBeanTag>
+     <meta charset="UTF-8">
+     <title>${cmsCase.name}</title>
+     <link rel="stylesheet" type="text/css" href="${domainUrl!}/static/wapsite/css/swiper.min.css">
+     <link rel="stylesheet" type="text/css" href="${domainUrl!}/static/wapsite/css/photoswipe.css">
+     <link rel="stylesheet" type="text/css" href="${domainUrl!}/static/wapsite/css/default-skin.css">
+     <#include "mcommon.ftl" />
+ </head>
+ <body class="bgW case">
+ <div class="rw_case_details">
+     <!-- 案例详情轮播 -->
+     <div class="img_box swiper-container demo-test-gallery">
+         <div class="swiper-wrapper">
+         	 <#if cmsCase.images?? && cmsCase.images!="">
+	            <#assign images="${cmsCase.images}"?eval/>
+	            <#list images as image>
+	            	<div class="swiper-slide">
+                        <a href="${image.image}" data-size="1600x1068"  data-med-size="1024x1024">
+                            <img src="${image.image}?x-oss-process=image/resize,m_fixed,h_452,w_750,limit_0/quality,q_100" class = 'look-img'>
+                        </a>
+                    </div>
+        		</#list>
+        	 </#if>
+         </div>
+         <div class="swiper-pagination"></div>
+     </div>
+     <!-- 内容 -->
+     <div class="case_content">
+         <p class="case_title">${cmsCase.name}</p>
+         <div class="case_flex">
+             <div class="flex_item">
+                 <p>风格</p>
+                 <p class="item_style">${cmsCase.styleName!"-"}</p>
+             </div>
+             <div class="flex_item border">
+                 <span class="line left"></span>
+                 <p>户型</p>
+                 <p class="item_style">${cmsCase.houseTypeName!"-"}</p>
+                 <span class="line right"></span>
+             </div>
+             <div class="flex_item">
+                 <p>面积</p>
+                 <p class="item_style">
+                     <span>${cmsCase.area!"-"}</span><#if cmsCase.area??><span>m&sup2;</span></#if>
+                 </p>
+             </div>
+         </div>
+     </div>
+     <!-- 设计师介绍 -->
+    <#if cmsCase.stylistId??>
+     <#assign stylistId = cmsCase.stylistId!>
+         <@designerBeanTag stylistId = stylistId;designer>
+             <#assign stylist = designer>
+         </@designerBeanTag>
+    </#if>
+     <#if stylist??>
+	     <div class="bgCCC"></div>
+	     <a href="${domainUrl}/wapsite/stylist?shopid=${wapsite_shop_id?c}&stylistId=${stylist.id}" class="case_designer">
+	         <div class="case_head">
+	             <img src="<#if stylist.images?? && stylist.images != "">${stylist.images}<#else>${domainUrl}/static/wapsite/images/rw_head_info.png</#if>" alt="">
+             </div>
+	         <div class="case_text">
+	             <p class="designer_text">
+	                 <span class="designer_name">${stylist.name}</span>
+	                 <span class="designer_position">${stylist.levelName!}</span>
+	             </p>
+                 <@shopTag shopid = stylist.branchShopId;branchShop>
+                    <#assign  branchShop = branchShop>
+                 </@shopTag>
+	             <p class="designer_address">${branchShop.name!}</p>
+	         </div>
+	         <div class="arrow">
+	             <img src="${domainUrl}/static/wapsite/images/case_arrow.png" alt="">
+	         </div>
+	     </a>
+     </#if>
+     <div class="bgCCC"></div>
+     <div class="designer_explain">
+         <div class="explain_box">
+             <img class="img_left" src="${domainUrl}/static/wapsite/images/case_line.png" alt="">
+             <#--<span class="explain_title">设计说明</span>-->
+             设计说明
+             <img src="${domainUrl}/static/wapsite/images/case_line.png" alt="">
+         </div>
+         <div class="explain_text"> ${cmsCase.description!}</div>
+
+        <@moduleTag moduleType = "70";result>
+             <#assign hasModule = result.hasModule>
+         </@moduleTag>
+
+         <#if  weixin_shop_user??>
+             <a href = '${domainUrl}/wapsite/quick?shopid=${wapsite_shop_id?c}&url=${domainUrl}/wapsite/case?shopid=${wapsite_shop_id?c}&caseId=${cmsCase.id}'' class = 'button1 code-button'>生成专属二维码</a>
+         </#if>
+         <#if hasModule>
+             <#--<a href = '${domainUrl}/wapsite/offer?shopid=${wapsite_shop_id?c}&source=${cmsCase.name}&f=${f!}' class = 'button'>获取报价</a>-->
+             <a href = '${domainUrl}/wapsite/offer?shopid=${wapsite_shop_id?c}&source=${cmsCase.name}&f=${f!}'' class = 'button1'>获取报价</a>
+         </#if>
+     </div>
+     <div class = 'case clearfix'>
+         <h6>经典案例</h6>
+         <ul class = 'case-list'>
+         <@caseListTag styleId = cmsCase.style;result>
+             <#assign caseList = result.aaData>
+         <#list caseList as CmsCase>
+            <#if CmsCase_index lt 10>
+             <li class = 'list' >
+                 <a href = '${domainUrl}/wapsite/case?shopid=${wapsite_shop_id?c}&caseId=${CmsCase.id}'>
+                     <div class = 'list-img'>
+                         <#if CmsCase.images?? && CmsCase.images!="">
+                             <#assign images="${CmsCase.images}"?eval/>
+                             <img src="${images[0].image!}?x-oss-process=image/resize,m_fixed,h_205,w_334,limit_0/quality,q_100">
+                         </#if>
+                     </div>
+                     <p>${CmsCase.name!}</p>
+                 </a>
+             </li>
+            </#if>
+         </#list>
+         </@caseListTag>
+         </ul>
+     </div>
+     <div class = 'look-mask'>
+     </div>
+ </div>
+ <#include "f-offer-com.ftl" />
+ </body>
+ <script src="${domainUrl}/static/wapsite/js/swiper.min.js"></script>
+ <script src="${domainUrl}/static/wapsite/js/common.js"></script>
+ <script src="${domainUrl}/static/wapsite/js/photoswipe.js"></script>
+ <script src="${domainUrl}/static/wapsite/js/photoswipe-ui-default.js"></script>
+ <script src="${domainUrl}/static/wapsite/js/photoswipe1.js"></script>
+
+ <script>
+ 	 var accessStyleIds = '${cmsCase.style!}';
+ 	 var accessHouseTypeIds = '${cmsCase.houseType!}';
+     var accessType ='${cmsCase.type!}'
+     var accessTypeFlag = 1;
+     var accessWapType = 1;
+     seajs.use("controller/case");
+     //    费微信环境下 变量为underfined 若果不是在判断其是否为空
+     if(typeof(hasTag) === 'undefined' && typeof(staffname) === 'undefined'){
+     }else{
+         if(hasTag && staffname){
+
+             $('.code-button').css('display','block')
+         }else{
+             $('.code-button').css('display','none')
+         }
+     }
+ </script>
+ </html>

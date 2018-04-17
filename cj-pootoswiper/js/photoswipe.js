@@ -1777,7 +1777,7 @@ var _gestureStartTime,
 					var diff = Math.abs(touchesList[0].x - _currPoint.x) - Math.abs(touchesList[0].y - _currPoint.y);
 					// check the direction of movement
 					if(Math.abs(diff) >= DIRECTION_CHECK_OFFSET) {
-						_direction = diff > 0 ? 'h' : 'v';
+						_direction = diff > 0 ? 'h' : 'h';
 						_currentPoints = touchesList;
 					}
 				}

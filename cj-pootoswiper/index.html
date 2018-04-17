@@ -7,18 +7,36 @@
 		<!--<link rel="stylesheet" href="css/main.css" />-->
 		<link rel="stylesheet" href="css/photoswipe.css" />
 		<link rel="stylesheet" href="css/default-skin.css" />
+		<link rel="stylesheet" href="css/swiper-4.2.0.min.css" />
 		<style>
-			/*.pswp__ui{width:100%;height: 100%;}*/
-			/*.pswp__button--close{width:100%;height: 100%;}
+			.pswp__ui{width:100%;height: 100%;}
+			.pswp__button--close{width:100%;height: 100%;}
 			.pswp__top-bar{width:100%;height: 100%;background: none;}
-			.pswp__counter{display: none;}*/
+			.pswp__counter{display: none;}
 			.pswp__img{min-height: 300px !important;}
-			/*.pswp__zoom-wrap{transform:none !important;}*/
+			
+			
+			
+
+			/*.pswp__top-bar{display: none;}*/
+			/*.pswp__bg{z-index: 99999;}*/
+			/*.pswp__scroll-wrap{z-index: 999999;}*/
+			/*.pswp__img{z-index: 999999; position: relative;}*/
 		</style>
 		
 	</head>
 	<body>
-		<div id="demo-test-gallery" class="demo-gallery">
+		<div class="swiper-container">
+		  <div class="swiper-wrapper demo-gallery" id="demo-test-gallery">
+		    <a class="swiper-slide" href="../cj-viewer/img/4.jpg" data-size="1600x1068" data-med="../cj-viewer/img/4.jpg" data-med-size="750x452">
+		        <img src="../cj-viewer/img/4.jpg" alt="" />
+		    </a>
+		    <a class="swiper-slide" href="https://test-5rdputp3dxcow8sfu5i4.oss-cn-qingdao.aliyuncs.com/jcstore/avatar/2421/1521774121189/44974443.png?x-oss-process=image/resize,m_fixed,h_452,w_750,limit_0/quality,q_100" data-size="1600x1068" data-med="../cj-viewer/img/4.jpg" data-med-size="1024x1024">
+		        <img src="https://test-5rdputp3dxcow8sfu5i4.oss-cn-qingdao.aliyuncs.com/jcstore/avatar/2421/1521774121189/44974443.png?x-oss-process=image/resize,m_fixed,h_452,w_750,limit_0/quality,q_100" alt="" />
+		    </a>
+		  </div>
+		</div>
+		<!--<div id="demo-test-gallery" class="demo-gallery">
 		    <a href="../cj-viewer/img/4.jpg" data-size="1600x1068" data-med="../cj-viewer/img/4.jpg" data-med-size="1024x1024">
 		        <img src="../cj-viewer/img/4.jpg" alt="" />
 		    </a>
@@ -26,19 +44,26 @@
 		    <a href="../cj-viewer/img/13.jpg" data-size="1600x1068" data-med="../cj-viewer/img/13.jpg" data-med-size="1024x1024">
 		        <img src="../cj-viewer/img/13.jpg" alt="" />
 		    </a>
-		</div>
+		</div>-->
 		<script type="text/javascript" src="../cj-viewer/js/jquery-3.3.1.min.js" ></script>
+		<script type="text/javascript" src="js/swiper-4.2.0.min.js" ></script>
 		<script type="text/javascript" src="js/photoswipe.js" ></script>
 		<script type="text/javascript" src="js/photoswipe-ui-default.js" ></script>
 		<script type="text/javascript" src="js/1.js" ></script>
 		<script>
-			
-		    $(window).resize(function(){
-		    	if($(window).width()>550){
-		    		 window.location.reload();
-		    	}
-//		    	$('.transform').css('transform','none')
-		    });
+//		$(window).resize(function() {
+//			if($(window).width() > 550) {
+//				window.location.reload();
+//			}
+//		});
+//		$('.pswp__bg').on("click", function() {
+//			alert(1)
+//			history.go(-1);
+//		})
+		   var mySwiper = new Swiper('.swiper-container', {
+			autoplay: true,//可选选项，自动滑动
+		   })
 		</script>
+		
 	</body>
 </html>

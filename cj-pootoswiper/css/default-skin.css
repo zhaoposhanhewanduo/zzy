@@ -60,8 +60,8 @@
   /* Serve SVG sprite if browser supports SVG and resolution is more than 105dpi */
   .pswp--svg .pswp__button,
   .pswp--svg .pswp__button--arrow--left:before,
-  .pswp--svg .pswp__button--arrow--right:before {
-    background-image: url(default-skin.svg); }
+  /*.pswp--svg .pswp__button--arrow--right:before {
+    background-image: url(default-skin.svg); }*/
   .pswp--svg .pswp__button--arrow--left,
   .pswp--svg .pswp__button--arrow--right {
     background: none; } }
