@@ -15,13 +15,12 @@
 			.pswp__counter{display: none;}
 			.pswp__img{min-height: 300px !important;}
 			
-			
-			
 
-			/*.pswp__top-bar{display: none;}*/
-			/*.pswp__bg{z-index: 99999;}*/
+			.pswp__top-bar{display: none;}
+			.pswp__bg{z-index: 99999;}
 			/*.pswp__scroll-wrap{z-index: 999999;}*/
 			/*.pswp__img{z-index: 999999; position: relative;}*/
+			.pswp__scroll-wrap{height: 360px;width: 100%;top: 50%;margin-top: -180px;z-index: 999999;}
 		</style>
 		
 	</head>
@@ -56,10 +55,10 @@
 //				window.location.reload();
 //			}
 //		});
-//		$('.pswp__bg').on("click", function() {
-//			alert(1)
-//			history.go(-1);
-//		})
+		$('.pswp__bg').on("click", function() {
+			alert(1)
+			history.go(-1);
+		})
 		   var mySwiper = new Swiper('.swiper-container', {
 			autoplay: true,//可选选项，自动滑动
 		   })
